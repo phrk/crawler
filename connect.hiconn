@@ -1,0 +1,12 @@
+{
+
+"_NAME" : "crawler",
+
+"_CPPFILES" : [ { "type": "Glob", "mask": "*.cpp" },
+	 			{ "type": "Glob", "mask": "*.cc" }],
+
+"_LINKFLAGS": [ "-lcurl" ],
+
+"_DEPS" : [ "../hiaux/strings/",
+	 		"../hiaux/common/"]
+}
