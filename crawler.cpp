@@ -45,7 +45,7 @@ namespace crw {
 				m_client->call(link, link.url);
 				stats.startedLoading();
 			} else {
-				std::cout << "Crawler::proceedEvents cannot download beacause of limits\n";
+				//std::cout << "Crawler::proceedEvents cannot download beacause of limits\n";
 				m_download_queue.push(link);
 			}
 			if ( m_client->getRequestsCount() >= 10 )	

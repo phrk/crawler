@@ -10,6 +10,8 @@
 
 #include <boost/shared_ptr.hpp>
 
+#include "gumbo.h"
+
 namespace crw {
 
 	class Content {
@@ -23,6 +25,9 @@ namespace crw {
 	};
 
 	class Page {
+		
+		void findLinks(GumboNode* node);
+		
 	public:
 	
 		Link link;
@@ -32,7 +37,7 @@ namespace crw {
 		std::vector<Link> outbound_links_in;
 		std::vector<Link> outbound_links_out;
 	
-		Page(const Link &_link);
+	//	Page(const Link &_link);
 		Page(const Link &_link, const std::string &_html);
 	};
 

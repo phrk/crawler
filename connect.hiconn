@@ -5,7 +5,7 @@
 "_CPPFILES" : [ { "type": "Glob", "mask": "*.cpp" },
 	 			{ "type": "Glob", "mask": "*.cc" }],
 
-"_LINKFLAGS": [ "-lcurl" ],
+"_LINKFLAGS": [ "-lcurl", "-lgumbo" ],
 
 "_DEPS" : [ "../hiaux/strings/",
 	 		"../hiaux/common/",

@@ -10,6 +10,8 @@
 
 #include <boost/shared_ptr.hpp>
 
+#include <iostream>
+
 namespace crw {
 
 	class IncorrectUrlEx {
@@ -19,10 +21,12 @@ namespace crw {
 	public:
 	
 		Url url;
+		Url inverted_url;
 		Url url_without_params;
 		Domain domain;
 		
-		Link(const Url &_url);
+		// if domain is inverted
+		Link(const Url &_url, bool _inverted = false);
 	};
 
 }
