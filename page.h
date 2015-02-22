@@ -13,12 +13,13 @@
 namespace crw {
 
 	class Content {
+	public:
+	
 		std::string html;
 		std::string text;
-	public:
 		
-		std::string get();
-		std::string textOnly();
+		//std::string get();
+		//std::string textOnly();
 	};
 
 	class Page {
@@ -31,7 +32,8 @@ namespace crw {
 		std::vector<Link> outbound_links_in;
 		std::vector<Link> outbound_links_out;
 	
-		Page(const Url &_url);
+		Page(const Link &_link);
+		Page(const Link &_link, const std::string &_html);
 	};
 
 	typedef boost::shared_ptr<Page> PagePtr;

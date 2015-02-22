@@ -3,6 +3,7 @@
 
 #include "hiconfig.h"
 #include "hiaux/strings/string_utils.h"
+#include "hiaux/network/HttpClientAsync.h"
 
 #include <queue>
 
@@ -10,6 +11,8 @@
 #include "crawler_consts.h"
 #include "domain_stats.h"
 #include "page.h"
+
+#include "http_client.h"
 
 #include <boost/function.hpp>
 
@@ -24,16 +27,25 @@ namespace crw {
 		
 		std::queue<Link> m_download_queue;
 		
+		typedef HttpClientA<Link> CrawlerHttpClient;
+		typedef boost::shared_ptr< CrawlerHttpClient > CrawlerHttpClientPtr;
+		CrawlerHttpClientPtr m_client;
+		
+		void onCalledServer(CrawlerHttpClient::JobInfo _ji);
+		DomainStats& getDomainStats(const Link &_link);
+		
 	public:
 		
 		Crawler(const DomainLimits &_def_domain_limits,
 			boost::function<void(PagePtr page)> _onPage);
 		
-		void addLink(const Url &_url);
+		void enqueueLink(const Link &_link);
 		void proceedEvents();
 		
 		virtual ~Crawler();
 	};
+
+	typedef boost::shared_ptr<Crawler> CrawlerPtr;
 
 };
 

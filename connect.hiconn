@@ -8,5 +8,7 @@
 "_LINKFLAGS": [ "-lcurl" ],
 
 "_DEPS" : [ "../hiaux/strings/",
-	 		"../hiaux/common/"]
+	 		"../hiaux/common/",
+			"../hiaux/network/",
+			"../hiaux/thirdparty/url-parser/"]
 }

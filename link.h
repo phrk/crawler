@@ -3,6 +3,8 @@
 
 #include "hiconfig.h"
 
+#include "hiaux/thirdparty/url-parser/url_parser.h"
+
 #include "crawler_types.h"
 #include "crawler_consts.h"
 
@@ -10,12 +12,15 @@
 
 namespace crw {
 
+	class IncorrectUrlEx {
+	};
+
 	class Link {
 	public:
 	
 		Url url;
+		Url url_without_params;
 		Domain domain;
-		Path path;
 		
 		Link(const Url &_url);
 	};

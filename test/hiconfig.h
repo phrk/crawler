@@ -11,5 +11,7 @@
 #define NO_STD_TR1
 #define POOLSERVER_SOCKET_CONN_QUEUE_SIZE 1024
 
+#include "hiaux/structs/hashtable.h"
+
 #endif	/* CONFIG_H */
 

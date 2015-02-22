@@ -13,7 +13,6 @@ namespace crw {
 	typedef std::string Domain;
 	typedef std::string Path;
 	
-	
 }
 
 #endif
