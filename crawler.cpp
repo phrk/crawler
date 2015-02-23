@@ -42,8 +42,10 @@ namespace crw {
 			DomainStats& stats = getDomainStats(link);
 			
 			if (stats.canDownload()) {
+				
 				m_client->call(link, link.url);
 				stats.startedLoading();
+			
 			} else {
 				//std::cout << "Crawler::proceedEvents cannot download beacause of limits\n";
 				m_download_queue.push(link);
